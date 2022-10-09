@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: super-secret-namespace
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: echo-pod
+  namespace: super-secret-namespace
+  labels:
+    name: echo-pod
+spec:
+  containers:
+  - name: echo-pod
+    image: alpine
+    command: ["sh", "-c"]
+    args: ["echo aGVsbG8gZnJvbSBhIGs4cyBwb2Q= | base64 -d"]
