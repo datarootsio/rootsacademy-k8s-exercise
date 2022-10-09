@@ -8,5 +8,8 @@ spec:
   containers:
   - name: my-webserver-container
     image: ngelders/rootsacademy-k8s-exercise:latest
+    env:
+    - name: COLOR
+      value: "#0f0f00"
     ports:
     - containerPort: 8000

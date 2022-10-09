@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-webserver-deployment
+  labels:
+    app: my-webserver-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-webserver-pod
+  template:
+    metadata:
+      labels:
+        app: my-webserver-pod
+    spec:
+      containers:
+      - name: my-webserver-container
+        image: ngelders/rootsacademy-k8s-exercise:latest
+        env:
+        - name: COLOR
+          value: "#0f0f00"
+        ports:
+        - containerPort: 8000
