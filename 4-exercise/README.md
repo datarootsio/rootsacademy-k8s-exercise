@@ -4,7 +4,7 @@ Find the pod with the name `echo-pod`.
 ## 1 apply
 Run:
 ```sh
-kubectl apply -f echo-pod.yaml && cls 
+kubectl apply -f echo-pod.yaml
 ```
 
 ## 2 find
